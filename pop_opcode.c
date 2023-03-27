@@ -25,7 +25,7 @@ void pop_opcode(stack_t **stack, int op_val, unsigned int line_number)
 	else
 		(*stack) = NULL;
 
-	free (temp);
-	
+	free(temp);
+
 	(void)op_val;
 }

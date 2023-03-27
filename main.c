@@ -48,6 +48,7 @@ void FileRead(FILE *fin)
 	    {"pall", pall_opcode},
 	    {"pint", pint_opcode},
 	    {"pop", pop_opcode},
+	    {"swap", swap_opcode},
 	};
 
 	int line = 0;
@@ -67,6 +68,7 @@ void FileRead(FILE *fin)
 		opcode = strtok(buff, "\n"
 				      "\t"
 				      " ");
+
 		if (opcode != NULL)
 		{
 			while (opcodes[op_index].opcode != NULL)
@@ -77,7 +79,7 @@ void FileRead(FILE *fin)
 					break;
 				}
 				op_index++;
-				if (op_index > 3) /* ++ the comparison value as more opcodes are added */
+				if (op_index > 4) /* ++ the comparison value as more opcodes are added */
 				{
 					fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
 					exit(EXIT_FAILURE);
@@ -86,6 +88,7 @@ void FileRead(FILE *fin)
 		}
 		op_index = 0;
 	}
+
 	free(buff);
 	free_stack(&stack);
 }
