@@ -4,7 +4,7 @@
  * swap_opcode - swaps the top two elements of the stack.
  * @stack: the top node.
  * @op_val: (ignored)
- * @line_number: the line number where the pop opcode is.
+ * @line_number: the line number where the swap opcode is.
  */
 void swap_opcode(stack_t **stack, int op_val, unsigned int line_number)
 {
