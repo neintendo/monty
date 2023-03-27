@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * sub_opcode - subtracts the top element of the stack from the
- *		second top element of the stack.
+ * mul_opcode - multiplies the second top element of the stack
+ *		with the top element of the stack.
  * @stack: the top node.
  * @op_val: (ignored)
- * @line_number: the line number where the sub opcode is.
+ * @line_number: the line number where the mul opcode is.
  */
-void sub_opcode(stack_t **stack, int op_val, unsigned int line_number)
+void mul_opcode(stack_t **stack, int op_val, unsigned int line_number)
 {
 	int a1, a2, result;
 	int elements = 0;
@@ -16,7 +16,7 @@ void sub_opcode(stack_t **stack, int op_val, unsigned int line_number)
 
 	if ((*stack) == NULL)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	while (temp != NULL)
@@ -26,13 +26,13 @@ void sub_opcode(stack_t **stack, int op_val, unsigned int line_number)
 	}
 	if (elements < 2)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	a1 = (*stack)->next->n;
 	a2 = (*stack)->n;
-	result = a1 - a2;
+	result = a1 * a2;
 
 	(*stack)->next->n = result;
 

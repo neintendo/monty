@@ -45,5 +45,8 @@ void swap_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void add_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void nop_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void sub_opcode(stack_t **stack, int op_val, unsigned int line_number);
+void div_opcode(stack_t **stack, int op_val, unsigned int line_number);
+void mul_opcode(stack_t **stack, int op_val, unsigned int line_number);
+void mod_opcode(stack_t **stack, int op_val, unsigned int line_number);
 
 #endif
