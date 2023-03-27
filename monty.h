@@ -43,5 +43,6 @@ void pint_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void pop_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void swap_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void add_opcode(stack_t **stack, int op_val, unsigned int line_number);
+void nop_opcode(stack_t **stack, int op_val, unsigned int line_number);
 
 #endif
