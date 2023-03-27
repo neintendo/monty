@@ -51,6 +51,7 @@ void FileRead(FILE *fin)
 	    {"swap", swap_opcode},
 	    {"add", add_opcode},
 	    {"nop", nop_opcode},
+	    {"sub", sub_opcode},
 	};
 
 	int line = 0;
@@ -81,7 +82,7 @@ void FileRead(FILE *fin)
 					break;
 				}
 				op_index++;
-				if (op_index > 6) /* ++ the comparison value as more opcodes are added */
+				if (op_index > 7) /* ++ the comparison value as more opcodes are added */
 				{
 					fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
 					exit(EXIT_FAILURE);
