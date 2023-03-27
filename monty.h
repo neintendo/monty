@@ -40,6 +40,7 @@ typedef struct instruction_s
 void push_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void pall_opcode(stack_t **stack, int op_val, unsigned int line_number);
 void pint_opcode(stack_t **stack, int op_val, unsigned int line_number);
+void pop_opcode(stack_t **stack, int op_val, unsigned int line_number);
 
 
 #endif

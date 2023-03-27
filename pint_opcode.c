@@ -3,7 +3,7 @@
 
 /**
  * pint_opcode - prints the value at the top of the stack.
- * @stack: the first node.
+ * @stack: the top node.
  * @op_val: (ignored)
  * @line_number: the line number where the pint opcode is.
  */

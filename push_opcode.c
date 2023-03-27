@@ -2,7 +2,7 @@
 
 /**
  * push_opcode - pushes an element to the stack.
- * @stack: pointer to the first node of the stack.
+ * @stack: pointer to the top node of the stack.
  * @op_val: the value to push to the stack.
  * @line_number: current line number of the opcode being processed.
  */

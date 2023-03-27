@@ -3,7 +3,7 @@
 
 /**
  * pall_opcode - prints all values on a stack.
- * @stack: the first node.
+ * @stack: the top node.
  * @op_val: (ignored)
  * @line_number: (ignored)
 */

@@ -47,6 +47,7 @@ void FileRead(FILE *fin)
 	    {"push", push_opcode},
 	    {"pall", pall_opcode},
 	    {"pint", pint_opcode},
+	    {"pop", pop_opcode},
 	};
 
 	int line = 0;
@@ -76,7 +77,7 @@ void FileRead(FILE *fin)
 					break;
 				}
 				op_index++;
-				if (op_index > 2)
+				if (op_index > 3) /* ++ the comparison value as more opcodes are added */
 				{
 					fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
 					exit(EXIT_FAILURE);
@@ -116,17 +117,18 @@ int operand_function(char *string)
 	return (value);
 }
 
+/**
+ * free_stack - frees a stack.
+ * @stack: the stack to free.
+ */
 void free_stack(stack_t **stack)
 {
-	stack_t *current, *next;
-	current = *stack;
+	stack_t *temp;
 
-	while (current != NULL)
+	while ((*stack))
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		temp = (*stack)->next;
+		free(*stack);
+		(*stack) = temp;
 	}
-
-	*stack = NULL;
 }
